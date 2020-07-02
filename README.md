@@ -18,28 +18,35 @@ module "tfmodule-azure-redis" {
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| null | ~> 2.1 |
+No requirements.
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| null | ~> 2.1 |
+| azurerm | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| mandatory | this field is mandatory | `string` | n/a | yes |
-| optional | this field is optional | `string` | `"default_value"` | no |
+| actionGroupId | The ID for the action group to receive notifications of alerts | `string` | n/a | yes |
+| appName | The base name of the application used in the naming convention. | `string` | n/a | yes |
+| capacity | (Required) The size of the Redis cache to deploy. Valid values for a SKU family of C (Basic/Standard) are 0, 1, 2, 3, 4, 5, 6, and for P (Premium) family are 1, 2, 3, 4. | `number` | n/a | yes |
+| environment | Name of the environment ex (Dev, Test, QA, Prod) | `string` | n/a | yes |
+| family | (Required) The SKU family/pricing group to use. Valid values are C (for Basic/Standard SKU family) and P (for Premium) | `string` | n/a | yes |
+| location | (Required) Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created. | `string` | n/a | yes |
+| minimum\_tls\_version | (Optional) The minimum TLS version. Defaults to 1.2. | `string` | `"1.2"` | no |
+| resource-group-name | Name of the resource group that exists in Azure | `string` | n/a | yes |
+| sku\_name | (Required) The SKU of Redis to use. Possible values are Basic, Standard and Premium. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| output\_name | description for output\_name |
+| id | The Route ID. |
+| primary\_connection\_string | The primary connection string of the Redis Instance. |
+| secondary\_connection\_string | The secondary connection string of the Redis Instance. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
