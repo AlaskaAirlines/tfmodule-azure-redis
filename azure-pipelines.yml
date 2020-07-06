@@ -23,7 +23,7 @@ steps:
   displayName: 'Go get test dependencies'
   inputs:
     command: 'get'
-    arguments: '-t ./test'
+    arguments: '-t ./...'
 
 - task: Go@0
   displayName: 'Go test'
