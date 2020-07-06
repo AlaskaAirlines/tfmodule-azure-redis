@@ -20,7 +20,7 @@ steps:
     arguments: '-u golang.org/x/lint/golint'
 
 - task: Go@0
-  displayName: 'Go get terratest'
+  displayName: 'Go get test dependencies'
   inputs:
     command: 'get'
     arguments: './test -t'
