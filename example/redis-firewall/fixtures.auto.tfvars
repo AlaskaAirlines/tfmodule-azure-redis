@@ -1,5 +1,5 @@
 resource-group-name = "tfmodulevalidation-test-group"
-appName             = "redisFirewall1"
+appName             = "redisFirewall"
 environment         = "test"
 location            = "westus2"
 capacity            = 1

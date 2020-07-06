@@ -29,7 +29,7 @@ steps:
   displayName: 'Go test'
   inputs:
     command: 'test'
-    arguments: './test'
+    arguments: './test -timeout 2h'
   env:
     ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
 

@@ -38,7 +38,7 @@ func TestRedisFirewallExample(t *testing.T) {
 	}
 
 	expectedRedisArgs := RedisValidationArgs{
-		appName:          "redisFirewall1-test-cache-westus2",
+		appName:          "redisFirewall-test-cache-westus2",
 		capacity:         1,
 		family:           redis.C,
 		skuName:          redis.Basic,
@@ -63,7 +63,7 @@ func TestRedisNoFirewallExample(t *testing.T) {
 	}
 
 	expectedRedisArgs := RedisValidationArgs{
-		appName:  "redisNoFirewall1-test-cache-westus2",
+		appName:  "redisNoFirewall-test-cache-westus2",
 		capacity: 1,
 		family:   redis.C,
 		skuName:  redis.Basic,
