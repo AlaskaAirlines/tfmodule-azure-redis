@@ -35,6 +35,7 @@ No requirements.
 | capacity | (Required) The size of the Redis cache to deploy. Valid values for a SKU family of C (Basic/Standard) are 0, 1, 2, 3, 4, 5, 6, and for P (Premium) family are 1, 2, 3, 4. | `number` | n/a | yes |
 | environment | Name of the environment ex (Dev, Test, QA, Prod) | `string` | n/a | yes |
 | family | (Required) The SKU family/pricing group to use. Valid values are C (for Basic/Standard SKU family) and P (for Premium) | `string` | n/a | yes |
+| firewallRules | (Optional) List of IP Addresses. | <pre>list(object({<br>    name     = string<br>    start_ip = string<br>    end_ip   = string<br>  }))</pre> | `[]` | no |
 | location | (Required) Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | minimum\_tls\_version | (Optional) The minimum TLS version. Defaults to 1.2. | `string` | `"1.2"` | no |
 | resource-group-name | Name of the resource group that exists in Azure | `string` | n/a | yes |

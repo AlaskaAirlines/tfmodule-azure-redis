@@ -33,17 +33,6 @@ variable "sku_name" {
   description = "(Required) The SKU of Redis to use. Possible values are Basic, Standard and Premium."
 }
 
-variable "minimum_tls_version" {
-  type        = string
-  description = "(Optional) The minimum TLS version. Defaults to 1.2."
-  default     = "1.2"
-}
-
-variable "actionGroupId" {
-  type        = string
-  description = "The ID for the action group to receive notifications of alerts"
-}
-
 variable "firewallRules" {
   type = list(object({
     name     = string
