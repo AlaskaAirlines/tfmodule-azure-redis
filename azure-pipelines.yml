@@ -12,36 +12,40 @@ pool:
 variables:
 - group: 'Terraform Module Variables'
 
-steps:
-- task: Go@0
-  displayName: 'Go get golint'
-  inputs:
-    command: 'get'
-    arguments: '-u golang.org/x/lint/golint'
+jobs:
+- job: 
+  displayName: Build, Test and Deploy
+  timeoutInMinutes: 130
+  steps:
+  - task: Go@0
+    displayName: 'Go get golint'
+    inputs:
+      command: 'get'
+      arguments: '-u golang.org/x/lint/golint'
 
-- task: Go@0
-  displayName: 'Go get test dependencies'
-  inputs:
-    command: 'get'
-    arguments: '-t ./...'
+  - task: Go@0
+    displayName: 'Go get test dependencies'
+    inputs:
+      command: 'get'
+      arguments: '-t ./...'
 
-- task: Go@0
-  displayName: 'Go test'
-  inputs:
-    command: 'test'
-    arguments: './test -timeout 2h'
-  env:
-    ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
+  - task: Go@0
+    displayName: 'Go test'
+    inputs:
+      command: 'test'
+      arguments: './test -timeout 2h'
+    env:
+      ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
 
-- task: Npm@1
-  displayName: 'Npm Install'
-  inputs:
-    command: 'install'
+  - task: Npm@1
+    displayName: 'Npm Install'
+    inputs:
+      command: 'install'
 
-- task: Bash@3
-  displayName: 'Release via semantic-release'
-  inputs:
-    targetType: 'inline'
-    script: 'npx semantic-release'
-  env:
-    GH_TOKEN: $(GH_TOKEN)
+  - task: Bash@3
+    displayName: 'Release via semantic-release'
+    inputs:
+      targetType: 'inline'
+      script: 'npx semantic-release'
+    env:
+      GH_TOKEN: $(GH_TOKEN)
