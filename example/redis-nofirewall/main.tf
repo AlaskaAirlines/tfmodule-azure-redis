@@ -8,8 +8,8 @@ module "actionGroup" {
   source = "github.com/AlaskaAirlines/tfmodule-azure-actiongroup.git?ref=v1.0.2"
 
   resource-group-name = var.resource-group-name
-  appName             = "emailSample"
-  environment         = "test"
+  appName             = var.appName
+  environment         = var.environment
   shortName           = "blah"
   enableEmail         = true
   emailName           = "TestName"
