@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.1](https://github.com/AlaskaAirlines/tfmodule-azure-redis/compare/v1.0.0...v1.0.1) (2020-07-14)
+
+
+### Bug Fixes
+
+* add missing tags to alerts ([97a069c](https://github.com/AlaskaAirlines/tfmodule-azure-redis/commit/97a069c65b69ae08164f8345eff55d6d5f929808))
+
 # 1.0.0 (2020-07-08)
 
 
