@@ -38,6 +38,7 @@ resource "azurerm_redis_firewall_rule" "firewallRules" {
 resource "azurerm_monitor_metric_alert" "memoryMonitoringSev2" {
   name                = "${local.baseName} Redis Memory Monitoring Sev2"
   resource_group_name = data.azurerm_resource_group.rg.name
+  tags                = data.azurerm_resource_group.rg.tags
   scopes              = [azurerm_redis_cache.redis.id]
   description         = "Metric alerts for a Redis Instance with high Memory Usage - Sev 2."
   severity            = 2
@@ -58,6 +59,7 @@ resource "azurerm_monitor_metric_alert" "memoryMonitoringSev2" {
 resource "azurerm_monitor_metric_alert" "memoryMonitoringSev3" {
   name                = "${local.baseName} Redis Memory Monitoring Sev3"
   resource_group_name = data.azurerm_resource_group.rg.name
+  tags                = data.azurerm_resource_group.rg.tags
   scopes              = [azurerm_redis_cache.redis.id]
   description         = "Metric alerts for a Redis Instance with high Memory Usage - Sev 3."
   severity            = 3
@@ -78,6 +80,7 @@ resource "azurerm_monitor_metric_alert" "memoryMonitoringSev3" {
 resource "azurerm_monitor_metric_alert" "memoryMonitoringSev4" {
   name                = "${local.baseName} Redis Memory Monitoring Sev4"
   resource_group_name = data.azurerm_resource_group.rg.name
+  tags                = data.azurerm_resource_group.rg.tags
   scopes              = [azurerm_redis_cache.redis.id]
   description         = "Metric alerts for a Redis Instance with high Memory Usage - Sev 4."
   severity            = 4
@@ -98,6 +101,7 @@ resource "azurerm_monitor_metric_alert" "memoryMonitoringSev4" {
 resource "azurerm_monitor_metric_alert" "highProcessorSev2" {
   name                = "${local.baseName} Redis Processor Time Monitoring Sev2"
   resource_group_name = data.azurerm_resource_group.rg.name
+  tags                = data.azurerm_resource_group.rg.tags
   scopes              = [azurerm_redis_cache.redis.id]
   description         = "Metric alerts for a Redis Instance with high Processor Time Usage - Sev 2."
   severity            = 2
@@ -118,6 +122,7 @@ resource "azurerm_monitor_metric_alert" "highProcessorSev2" {
 resource "azurerm_monitor_metric_alert" "highProcessorSev3" {
   name                = "${local.baseName} Redis Processor Time Monitoring Sev3"
   resource_group_name = data.azurerm_resource_group.rg.name
+  tags                = data.azurerm_resource_group.rg.tags
   scopes              = [azurerm_redis_cache.redis.id]
   description         = "Metric alerts for a Redis Instance with high Processor Time Usage - Sev 3."
   severity            = 3
@@ -138,6 +143,7 @@ resource "azurerm_monitor_metric_alert" "highProcessorSev3" {
 resource "azurerm_monitor_metric_alert" "highProcessorSev4" {
   name                = "${local.baseName} Redis Processor Time Monitoring Sev4"
   resource_group_name = data.azurerm_resource_group.rg.name
+  tags                = data.azurerm_resource_group.rg.tags
   scopes              = [azurerm_redis_cache.redis.id]
   description         = "Metric alerts for a Redis Instance with high Processor Time Usage - Sev 4."
   severity            = 4
